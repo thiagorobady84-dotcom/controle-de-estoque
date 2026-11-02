@@ -81,7 +81,7 @@ export const ProductsView: React.FC = () => {
             <Package className="w-6 h-6 text-neutral-800" />
             Catálogo & Cadastro de Produtos
           </h2>
-          <p className="text-xs text-neutral-500 mt-0.5">
+          <p className="text-xs text-black mt-0.5">
             Gerenciamento físico de doces, pães, biscoitos, chocolates e descartáveis • Sem valores monetários
           </p>
         </div>
@@ -96,7 +96,7 @@ export const ProductsView: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="p-4 rounded-2xl bg-white border border-neutral-200 shadow-xs space-y-3">
+      <div className="p-4 rounded-2xl bg-white border border-black shadow-xs space-y-3">
         <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
           {/* Search Input */}
           <div className="relative flex-1">
@@ -106,7 +106,7 @@ export const ProductsView: React.FC = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Buscar por nome, SKU, código de barras ou marca..."
-              className="w-full pl-9 pr-3 py-2 bg-neutral-50 border border-neutral-300 rounded-xl text-xs text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-black"
+              className="w-full pl-9 pr-3 py-2 bg-neutral-50 border border-black rounded-xl text-xs text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-black"
             />
           </div>
 
@@ -114,7 +114,7 @@ export const ProductsView: React.FC = () => {
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-3 py-2 bg-neutral-50 border border-neutral-300 rounded-xl text-xs text-neutral-900 focus:outline-none focus:border-black"
+            className="px-3 py-2 bg-neutral-50 border border-black rounded-xl text-xs text-neutral-900 focus:outline-none focus:border-black"
           >
             <option value="ALL">Todas as Categorias</option>
             <option value="Doces & Sobremesas">Doces & Sobremesas</option>
@@ -132,7 +132,7 @@ export const ProductsView: React.FC = () => {
           <select
             value={selectedSupplier}
             onChange={(e) => setSelectedSupplier(e.target.value)}
-            className="px-3 py-2 bg-neutral-50 border border-neutral-300 rounded-xl text-xs text-neutral-900 focus:outline-none focus:border-black"
+            className="px-3 py-2 bg-neutral-50 border border-black rounded-xl text-xs text-neutral-900 focus:outline-none focus:border-black"
           >
             <option value="ALL">Todos os Fornecedores</option>
             {suppliers.map((s) => (
@@ -143,7 +143,7 @@ export const ProductsView: React.FC = () => {
           </select>
 
           {/* View Mode Toggle */}
-          <div className="flex items-center gap-1 bg-neutral-100 border border-neutral-300 rounded-xl p-1 shrink-0">
+          <div className="flex items-center gap-1 bg-neutral-100 border border-black rounded-xl p-1 shrink-0">
             <button
               onClick={() => setViewMode('table')}
               className={`p-1.5 rounded-lg transition ${
@@ -170,30 +170,30 @@ export const ProductsView: React.FC = () => {
           <span className="text-neutral-500 text-[11px] font-semibold shrink-0">Status:</span>
           <button
             onClick={() => setStatusFilter('ALL')}
-            className={`px-3 py-1 rounded-full font-bold transition shrink-0 ${
+            className={`px-3 py-1 rounded-full font-bold transition shrink-0 border border-[#848484] ${
               statusFilter === 'ALL'
-                ? 'bg-neutral-900 text-white'
-                : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 border border-neutral-300'
+                ? 'bg-[#fbfbfb] text-black shadow-xs'
+                : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
             }`}
           >
             Todos ({products.length})
           </button>
           <button
             onClick={() => setStatusFilter('lowStock')}
-            className={`px-3 py-1 rounded-full font-bold transition shrink-0 ${
+            className={`px-3 py-1 rounded-full font-bold transition shrink-0 border border-[#848484] text-black ${
               statusFilter === 'lowStock'
-                ? 'bg-amber-500 text-neutral-950'
-                : 'bg-amber-50 text-amber-800 hover:bg-amber-100 border border-amber-300'
+                ? 'bg-amber-400 font-black'
+                : 'bg-amber-50 hover:bg-amber-100'
             }`}
           >
             Estoque Baixo
           </button>
           <button
             onClick={() => setStatusFilter('expired')}
-            className={`px-3 py-1 rounded-full font-bold transition shrink-0 ${
+            className={`px-3 py-1 rounded-full font-bold transition shrink-0 border border-[#848484] text-black ${
               statusFilter === 'expired'
-                ? 'bg-red-600 text-white'
-                : 'bg-red-50 text-red-800 hover:bg-red-100 border border-red-300'
+                ? 'bg-red-400 font-black'
+                : 'bg-red-50 hover:bg-red-100'
             }`}
           >
             Vencidos
@@ -222,13 +222,13 @@ export const ProductsView: React.FC = () => {
         </div>
       ) : viewMode === 'table' ? (
         /* TABLE VIEW */
-        <div className="overflow-x-auto rounded-2xl border border-neutral-200 bg-white shadow-xs">
+        <div className="overflow-x-auto rounded-2xl border border-black bg-white shadow-xs">
           <table className="w-full text-left text-xs">
-            <thead className="bg-neutral-50 text-neutral-700 font-bold border-b border-neutral-200">
+            <thead className="bg-neutral-50 text-neutral-700 font-bold border-b border-black">
               <tr>
-                <th className="py-3.5 px-4">Código / Foto</th>
-                <th className="py-3.5 px-4">Nome do Produto</th>
-                <th className="py-3.5 px-4">Categoria</th>
+                <th className="py-3.5 px-4 border-b border-black">Código / Foto</th>
+                <th className="py-3.5 px-4 border-b border-black">Nome do Produto</th>
+                <th className="py-3.5 px-4 border-b border-black">Categoria</th>
                 <th className="py-3.5 px-4">Fornecedor</th>
                 <th className="py-3.5 px-4 text-center">Estoque Mínimo</th>
                 <th className="py-3.5 px-4 text-center">Saldo Físico</th>
@@ -236,7 +236,7 @@ export const ProductsView: React.FC = () => {
                 <th className="py-3.5 px-4 text-right">Ações</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-100">
+            <tbody className="divide-y divide-black">
               {filteredProducts.map((p) => {
                 const isLow = p.currentStock <= p.minStock;
                 const isExp = Boolean(p.expiryDate && p.expiryDate < today);
@@ -247,7 +247,7 @@ export const ProductsView: React.FC = () => {
                     className="hover:bg-neutral-50/80 transition cursor-pointer"
                     onClick={() => setSelectedProductForDetail(p)}
                   >
-                    <td className="py-3 px-4 whitespace-nowrap">
+                    <td className="py-3 px-4 whitespace-nowrap border-b border-black">
                       <div className="flex items-center gap-2.5">
                         {p.photoUrl ? (
                           <img
@@ -269,12 +269,12 @@ export const ProductsView: React.FC = () => {
                       </div>
                     </td>
 
-                    <td className="py-3 px-4">
+                    <td className="py-3 px-4 border-b border-black">
                       <p className="font-bold text-neutral-900 text-xs">{p.name}</p>
                       {p.brand && <span className="text-[10px] text-neutral-500">{p.brand}</span>}
                     </td>
 
-                    <td className="py-3 px-4 text-neutral-700 whitespace-nowrap">
+                    <td className="py-3 px-4 text-neutral-700 whitespace-nowrap border-b border-[#070707]">
                       <span className="px-2 py-0.5 rounded-md bg-neutral-100 border border-neutral-200 text-neutral-800 text-[10px] font-medium">
                         {p.category}
                       </span>

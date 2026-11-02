@@ -125,7 +125,11 @@ export const Navigation: React.FC = () => {
             className="p-2 -ml-2 text-neutral-300 hover:text-white rounded-lg hover:bg-neutral-900 transition"
             aria-label="Abrir Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-white border-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white border-white" />
+            )}
           </button>
           <div className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-lg bg-black border-2 border-white flex items-center justify-center font-black text-white text-xs tracking-wider shadow-sm">
@@ -148,7 +152,7 @@ export const Navigation: React.FC = () => {
             <span>Conectar Celular</span>
           </button>
           {userProfile && (
-            <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 capitalize">
+            <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-white border border-white capitalize">
               {userProfile.role}
             </span>
           )}

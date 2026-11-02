@@ -60,7 +60,7 @@ const AppContent: React.FC = () => {
 
       {/* Main Content Pane */}
       <main className="lg:pl-64 flex-1 flex flex-col min-w-0 bg-neutral-100">
-        <div className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto animate-in fade-in duration-150">
+        <div className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto animate-in fade-in duration-150 border-0 border-double border-[#010101]">
           {renderActiveView()}
         </div>
       </main>
