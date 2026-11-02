@@ -1,0 +1,75 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128;
+    }
+
+    // Connection test document
+    match /test/connection {
+      allow read, write: if true;
+    }
+
+    // User profiles
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // Products catalog (physical inventory)
+    match /products/{productId} {
+      allow read, write: if true;
+    }
+
+    // Suppliers
+    match /suppliers/{supplierId} {
+      allow read, write: if true;
+    }
+
+    // Stock Entries (Goods Receipts)
+    match /stockEntries/{entryId} {
+      allow read, write: if true;
+    }
+
+    // Stock Exits
+    match /stockExits/{exitId} {
+      allow read, write: if true;
+    }
+
+    // Stock Movements (Immutable audit log of all stock balance changes)
+    match /stockMovements/{movementId} {
+      allow read, write: if true;
+    }
+
+    // Stock Lots (FEFO and Expiration tracking)
+    match /stockLots/{lotId} {
+      allow read, write: if true;
+    }
+
+    // Damage and Mold Reports (Trocas e Avarias)
+    match /damageReports/{reportId} {
+      allow read, write: if true;
+    }
+
+    // Replacement Receipts (Reposições de Fornecedor)
+    match /replacementReceipts/{replacementId} {
+      allow read, write: if true;
+    }
+
+    // Archived Invoices
+    match /invoices/{invoiceId} {
+      allow read, write: if true;
+    }
+
+    // Audit Logs
+    match /auditLogs/{logId} {
+      allow read, write: if true;
+    }
+
+    // Stored Persistent Images (Invoice & Damage photos)
+    match /storedImages/{imageId} {
+      allow read, write: if true;
+    }
+  }
+}
