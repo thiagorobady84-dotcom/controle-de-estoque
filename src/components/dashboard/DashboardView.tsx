@@ -132,7 +132,7 @@ export const DashboardView: React.FC = () => {
       {/* Main KPI Cards Grid */}
       <div>
         <div className="flex items-center justify-between mb-3.5">
-          <h2 className="text-base font-black text-neutral-900 tracking-tight flex items-center gap-2">
+          <h2 className="text-base font-black text-black border-black tracking-tight flex items-center gap-2">
             <Boxes className="w-5 h-5 text-neutral-800" />
             Visão Geral do Estoque Físico
           </h2>

@@ -77,8 +77,8 @@ export const ProductsView: React.FC = () => {
       {/* View Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-black text-neutral-900 tracking-tight flex items-center gap-2">
-            <Package className="w-6 h-6 text-neutral-800" />
+          <h2 className="text-xl font-black text-black border-black tracking-tight flex items-center gap-2">
+            <Package className="w-6 h-6 text-black" />
             Catálogo & Cadastro de Produtos
           </h2>
           <p className="text-xs text-black mt-0.5">

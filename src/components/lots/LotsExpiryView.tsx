@@ -94,11 +94,11 @@ export const LotsExpiryView: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h2 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-          <CalendarClock className="w-6 h-6 text-amber-400" />
+        <h2 className="text-xl font-bold text-black border-black tracking-tight flex items-center gap-2">
+          <CalendarClock className="w-6 h-6 text-amber-500" />
           Controle de Lotes & Validades (FEFO)
         </h2>
-        <p className="text-xs text-slate-400 mt-0.5">
+        <p className="text-xs text-black mt-0.5">
           Monitoramento preventivo de expiração • Prioridade de saída para lotes com vencimento mais próximo
         </p>
       </div>
@@ -115,11 +115,11 @@ export const LotsExpiryView: React.FC = () => {
           }`}
         >
           <div className="flex items-center justify-between text-xs text-red-400 font-semibold">
-            <span>Vencidos</span>
+            <span className="text-white">Vencidos</span>
             <CalendarX className="w-4 h-4" />
           </div>
           <p className="text-2xl font-black text-red-400 mt-1">{countExpired}</p>
-          <span className="text-[10px] text-slate-400 block mt-0.5">Baixar/Trocar</span>
+          <span className="text-[10px] text-white block mt-0.5">Baixar/Trocar</span>
         </div>
 
         {/* Vence em 7 dias */}
@@ -132,11 +132,11 @@ export const LotsExpiryView: React.FC = () => {
           }`}
         >
           <div className="flex items-center justify-between text-xs text-amber-400 font-semibold">
-            <span>Até 7 dias</span>
+            <span className="text-white">Até 7 dias</span>
             <Clock className="w-4 h-4" />
           </div>
           <p className="text-2xl font-black text-amber-400 mt-1">{count7}</p>
-          <span className="text-[10px] text-slate-400 block mt-0.5">Urgente</span>
+          <span className="text-[10px] text-white block mt-0.5">Urgente</span>
         </div>
 
         {/* Vence em 15 dias */}
